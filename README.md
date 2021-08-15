@@ -71,7 +71,7 @@ In terms of **credibility**, on the surface this data shows some concerns. For i
     
 **C - Cited**<span style="color:green;"> (4 out of 5). </span>: The dataset is cited from a place called Zenodo which, after a brief Google search, seems to be a fairly reputable website where large data can be shared publicly and used by anyone interested in accessing it. In addition, the data is said to be collected from researchers (Robert Furberg, Julia Brinton, Michael Keating, and Alexa Ortiz) from RTI International, a well-established non-profit organization providing research and technical services. 
 
-The dataset clearly is not the most comprehensive, so my analysis likely will not fully represent the population. It is the data that has been given for this project, so it is what will be used; however, the analysis would likely be more representative and insightful if used alongside another dataset and/or additional information that was collected by Bellabeat. 
+The dataset clearly is not the most comprehensive, so my analysis likely will not fully represent the population. The data provided will help identify trends in Bellabeat users specifically, which is what Bellabeat is looking for; however, the analysis would likely be more representative and insightful if used alongside another dataset and/or additional information collected by Bellabeat. 
    
 After identifying the data' integrity, it is time to prepare the data for analysis. 
 
