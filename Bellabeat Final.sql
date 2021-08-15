@@ -1,6 +1,6 @@
-# Clean the data & select column names to use for analysis. Note: I had to alter the data types in Excel for the Weight and Minutes_sleep tables because the CSV files would not load into BigQuery otherwise.
+-- Clean the data & select column names to use for analysis. Note: I had to alter the data types in Excel for the Weight and Minutes_sleep tables because the CSV files would not load into BigQuery otherwise.
 
-# Clean daily_activity table by removing unwanted columns and rows. Note - I already dropped a few columns I wasn't interested in while previewing the data in Excel. 
+-- Clean daily_activity table by removing unwanted columns and rows. Note - I already dropped a few columns I wasn't interested in while previewing the data in Excel. 
 
 SELECT * FROM daily_activity;
 
@@ -10,7 +10,7 @@ WHERE TotalSteps = 0;
 DELETE FROM daily_activity
 WHERE TotalSteps = 0; 
 
-# Clean Weight table by removing unwanted columns.
+-- Clean Weight table by removing unwanted columns.
 
 SELECT * FROM weight;
 
@@ -24,9 +24,9 @@ SELECT * FROM weight;
 SELECT * FROM weight 
 WHERE WeightPounds IS NULL;
 
-# Looks like the Weight table is all good to go! As previously mentioned I already ensured the data types were correct in Excel PowerQuery before uploading to SQL, so those should all be fine. 
+-- Looks like the Weight table is all good to go! As previously mentioned I already ensured the data types were correct in Excel PowerQuery before uploading to SQL, so those should all be fine. 
 
-# Time for cleaning our final set of data in the Minutes_sleep table
+-- Time for cleaning our final set of data in the Minutes_sleep table
 
 SELECT * FROM minutes_sleep;
 
@@ -39,7 +39,6 @@ WHERE TotalMinutesAsleep = 0;
 ALTER TABLE minutes_sleep
 MODIFY COLUMN SleepDay DATE;
 	
-
 -- In total I've uploaded 3 tables that I'll be using for my analysis
 
 SELECT Id, AVG(TrackerDistance) AS AvgDistance, AVG(Calories) AS AvgCalories
@@ -109,6 +108,8 @@ FROM all_activity;
 UPDATE all_activity
 	SET TotalActiveMinutes = (VeryActiveMinutes + FairlyActiveMinutes + LightlyActiveMinutes + SedentaryMinutes);
 
+-- STATS
+
 SELECT AVG(SedentaryMinutes/TotalActiveMinutes)*100 AS AvgInactivity
 FROM all_activity;
 
@@ -119,3 +120,46 @@ FROM all_activity;
 
 -- It looks like time asleep is not necessarily correlated with how many calories users burn. In addition, a lot of users aren't wearing there watches while they sleep, so that could be an area of focus for future Bellabeat products.
 
+SELECT Id, MAX(TrackerDistance), MIN(TrackerDistance), AVG(TrackerDistance)
+FROM all_activity
+GROUP BY id;
+
+SELECT AVG(Calories)
+FROM all_activity;
+
+SELECT AVG(TrackerDistance)
+FROM all_activity;
+
+SELECT AVG(WeightPounds), MAX(WeightPounds), MIN(WeightPounds)
+FROM all_activity;
+
+SELECT Id, AVG(WeightPounds), MAX(WeightPounds), MIN(WeightPounds)
+FROM all_activity
+GROUP BY id;
+
+SELECT Id, AVG(TotalMinutesAsleep)
+FROM all_activity
+WHERE TotalMinutesAsleep IS NOT NULL
+GROUP BY Id
+
+SELECT AVG(TotalMinutesAsleep/60) AS TotalHrAsleep
+FROM all_activity;
+
+-- Additonal observations about weight
+
+SELECT Id, AVG(WeightPounds), AVG(TotalMinutesAsleep), AVG(VeryActiveMinutes), AVG(TotalDistance), AVG(TotalSteps), AVG(Calories)
+FROM all_activity
+GROUP BY Id;
+
+CREATE VIEW AvgTotalsById AS(
+	SELECT Id, AVG(WeightPounds), AVG(TotalMinutesAsleep), AVG(VeryActiveMinutes), AVG(TotalDistance), AVG(TotalSteps), AVG(Calories)
+	FROM all_activity
+	GROUP BY Id
+);
+
+CREATE VIEW AvgWeight AS(
+SELECT Id, AVG(WeightPounds), AVG(TotalMinutesAsleep), AVG(VeryActiveMinutes), AVG(TotalDistance), AVG(TotalSteps), AVG(Calories)
+FROM all_activity
+WHERE WeightPounds IS NOT NULL
+GROUP BY Id
+);
