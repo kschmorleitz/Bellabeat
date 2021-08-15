@@ -31,7 +31,7 @@ WHERE WeightPounds IS NULL;
 SELECT * FROM minutes_sleep;
 
 ALTER TABLE minutes_sleep
-    DROP COLUMN TotalSleepRecords;
+DROP COLUMN TotalSleepRecords;
 
 DELETE FROM minutes_sleep
 WHERE TotalMinutesAsleep = 0;
@@ -51,7 +51,7 @@ GROUP BY Id;
 
 SELECT * FROM daily_activity da
 	LEFT JOIN minutes_sleep ms
-    ON da.id = ms.id AND da.activitydate = ms.sleepday;
+    	ON da.id = ms.id AND da.activitydate = ms.sleepday;
     
 ALTER TABLE minutes_sleep
 	RENAME COLUMN id TO id2;
@@ -59,7 +59,7 @@ ALTER TABLE minutes_sleep
 CREATE TABLE da_sleep
 	AS (SELECT * FROM daily_activity da
 	LEFT JOIN minutes_sleep ms
-    ON da.id = ms.id2 AND da.activitydate = ms.sleepday); 
+    	ON da.id = ms.id2 AND da.activitydate = ms.sleepday); 
 
 ALTER TABLE da_sleep
 	DROP COLUMN id2;
@@ -73,19 +73,19 @@ ALTER TABLE weight
 
 SELECT * FROM da_sleep das
 	LEFT JOIN weight w
-    ON das.id = w.id3 AND das.activitydate = w.date;
+    	ON das.id = w.id3 AND das.activitydate = w.date;
     
 -- Now all the tables are joined! Let's make this table official. Then we'll clean up the columns as there are multiple dates and IDs
 
 CREATE TABLE all_activity
 	AS (SELECT * FROM da_sleep das
 	LEFT JOIN weight w
-    ON das.id = w.id3 AND das.activitydate = w.date);
+    	ON das.id = w.id3 AND das.activitydate = w.date);
     
 ALTER TABLE all_activity
 	DROP COLUMN id3,
-    DROP COLUMN sleepday,
-    DROP COLUMN date;
+    	DROP COLUMN sleepday,
+    	DROP COLUMN date;
     
 SELECT * FROM all_activity;
 
@@ -158,8 +158,8 @@ CREATE VIEW AvgTotalsById AS(
 );
 
 CREATE VIEW AvgWeight AS(
-SELECT Id, AVG(WeightPounds), AVG(TotalMinutesAsleep), AVG(VeryActiveMinutes), AVG(TotalDistance), AVG(TotalSteps), AVG(Calories)
-FROM all_activity
-WHERE WeightPounds IS NOT NULL
-GROUP BY Id
-);
+	SELECT Id, AVG(WeightPounds), AVG(TotalMinutesAsleep), AVG(VeryActiveMinutes), AVG(TotalDistance), AVG(TotalSteps), AVG(Calories)
+	FROM all_activity
+	WHERE WeightPounds IS NOT NULL
+	GROUP BY Id
+	);
