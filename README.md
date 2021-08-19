@@ -107,6 +107,7 @@ After joining the daily_activity, minutes_sleep, and weight tables I learned a f
 # <font size="5"> Share
 After analyzing the data, I would share my analysis with Bellabeat stakeholders. The recommendations I would make to them based off of my findings include:
 
+- Record ages of customers so more data can be collected based on age, which can then translate to targeted marketing strategies for specific age groups.
 - Find ways to encourage users to be more active throughout the day as, on average, users were only active 22% during the day. This could possibly be done by showing users, perhaps upon signing up to the subscription or buying a product, how those who are more active weigh less (however, it's important to note that of the 8 people who recorded weight from this dataset, only one user recorded being very overweight).
 - Prompt users to record their weight, perhaps by building an in-app graphic that shows weight progress from the data. In addition, Bellabeat could create a scale that has some bluetooth connectivity with their app to record this data so users don't have to enter the information manually. This would also give Bellabeat another product on the market that could bring in additional revenue.
 - Find a way to make Leaf more comfortable so users are more likely to wear it to bed, or create a better product users can wear to track their sleep.
