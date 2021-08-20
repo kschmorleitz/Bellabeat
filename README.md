@@ -94,13 +94,14 @@ After joining the daily_activity, minutes_sleep, and weight tables I learned a f
 - Only 8 of 33 users recorded their weight
 - Users spent an average of 7 hours asleep each night
 - The average weight recorded was 158.8 lbs, with a minimum weight recording of 116 lbs and a maximum weight of 294.3 lbs
+- 9 of 33 users did not record their sleep data, and 2 of 33 users had non-conclusive recordings (i.e. their average time asleep was < 2 hr per night)
 
 **Observations**:
 - Weight isn't being recorded frequently by users
-- Most users aren't recording their sleep data
+- Many users aren't recording their sleep data
 
 **Correlations**:
-- Average steps taken per day doesn't necessary correlate with the average amount of calories burned per day
+- Average steps taken per day doesn't necessarily correlate with the average amount of calories burned per day
 - More time asleep is not necessarily correlated with the amount of calories one burns in a day
 - For those who recorded their weight, users who weight < 200 lbs are much more likely to exercise than those who weight > 200 lbs
 
@@ -111,6 +112,7 @@ After analyzing the data, I would share my analysis with Bellabeat stakeholders.
 - Find ways to encourage users to be more active throughout the day as, on average, users were only active 22% during the day. This could possibly be done by showing users, perhaps upon signing up to the subscription or buying a product, how those who are more active weigh less (however, it's important to note that of the 8 people who recorded weight from this dataset, only one user recorded being very overweight).
 - Prompt users to record their weight, perhaps by building an in-app graphic that shows weight progress from the data. In addition, Bellabeat could create a scale that has some bluetooth connectivity with their app to record this data so users don't have to enter the information manually. This would also give Bellabeat another product on the market that could bring in additional revenue.
 - Find a way to make Leaf more comfortable so users are more likely to wear it to bed, or create a better product users can wear to track their sleep.
+- Before bedtime, prompt users to charge their devices so all sleep data will be collected throughout the night. 
 - Build in competitions into the app or membership subscription where users can connect with each other, compete against friends and/or the community, etc. to make users more active and engage more with Bellabeat products. 
 
 # <font size="5"> Act
