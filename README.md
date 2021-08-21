@@ -92,7 +92,7 @@ After joining the daily_activity, minutes_sleep, and weight tables I learned a f
 - The average number of calories burned per day by all users is 2,365
 - Average distance users walked per day is 5.98 miles
 - Only 8 of 33 users recorded their weight
-- Users spent an average of 7 hours asleep each night
+- Users spent an average of about 6.7 hours asleep each night
 - The average weight recorded was 158.8 lbs, with a minimum weight recording of 116 lbs and a maximum weight of 294.3 lbs
 - 9 of 33 users did not record their sleep data, and 2 of 33 users had non-conclusive recordings (i.e. their average time asleep was < 2 hr per night)
 
