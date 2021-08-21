@@ -89,7 +89,7 @@ After joining the daily_activity, minutes_sleep, and weight tables I learned a f
 
 **Stats**:
 - On average, the users were inactive 78% of the time
-- The average number of calories burned per day by all users is 2,365
+- The average number of calories burned per day by all users is 2,343
 - Average distance users walked per day is 5.98 miles
 - Only 8 of 33 users recorded their weight
 - Users spent an average of about 6.8 hours asleep each night
