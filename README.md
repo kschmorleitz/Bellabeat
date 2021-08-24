@@ -106,7 +106,7 @@ After joining the daily_activity, minutes_sleep, and weight tables I learned a f
 - For those who recorded their weight, users who weight < 200 lbs are much more likely to exercise than those who weight > 200 lbs
 
 # <font size="5"> Share
-After analyzing the data, I would share my analysis with Bellabeat stakeholders. The recommendations I would make to them based off of my findings include:
+After analyzing the data, I share my analysis with Bellabeat stakeholders. The visual I use to help in making my below recommendations can be found [here](https://public.tableau.com/app/profile/kristen.schmorleitz/viz/Bellabeat1/Dashboard1#1). 
 
 - Record age and sex, which can then be translated to more targeted marketing strategies for specific groups.
 - Find ways to encourage users to be more active throughout the day as, on average, users were only active 22% during the day. This could possibly be done by showing users, perhaps upon signing up to the subscription or buying a product, how those who are more active weigh less (however, it's important to note that of the 8 people who recorded weight from this dataset, only one user recorded being very overweight).
@@ -119,6 +119,5 @@ After analyzing the data, I would share my analysis with Bellabeat stakeholders.
 While it is up to Bellabeat to act on my findings, I am open to providing further insight or answering additional questions that were missed in our discussion during the Share phase. Perhaps the company will ask me to analyze the data further or ask me for help on future projects. 
 
 **Going forward**:
-- Visualization tools (e.g. Tableau) are needed to better identify trends and convey ideas to stakeholders
 - This dataset was quite small; a larger dataset would be better at identifying true population trends and correlations
 - Collecting data from longer periods of time would be useful for further analysis
